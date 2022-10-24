@@ -1,9 +1,16 @@
 #!/bin/bash
 if [ "$EUID" -ne 0 ]
-    then echo "Must be root."
+    then 
+    echo "Must be root."
     exit
 fi
-echo "Auto-Updating"
+#TODO: improve commenting and formatting
+if [ "$1" = "--do-upgrade" ]
+    then 
+        echo "Auto-Updating"
+    else
+        echo "--do-upgrade was not passed. Updating apt database only, and taking no further action."
+fi
 dateTime=$(date) 
 echo "Monthly Updates for $dateTime" > updates.log
 echo >> updates.log
