@@ -15,7 +15,7 @@ if [ "$1" = "--do-upgrade" ]
     then 
         apt-get autoremove -y >> updates.log
     else
-        echo >> "--do-upgrade not passed" >> updates.log
+        echo "--do-upgrade not passed" >> updates.log
 fi
 echo >> updates.log
 echo "Applying upgrades" >> updates.log
@@ -24,5 +24,5 @@ if [ "$1" = "--do-upgrade" ]
         apt-get upgrade -y >> updates.log
         reboot
     else
-        echo >> "--do-upgrade not passed" >> updates.log
+        echo "--do-upgrade not passed" >> updates.log
 fi
